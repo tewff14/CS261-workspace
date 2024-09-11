@@ -1,0 +1,51 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    width: 400px;
+    height: 300px;
+
+    border: 1px solid black;
+    border-radius: 5%;
+
+
+    padding: 20px;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+
+    font-size: 16px;
+
+}
+
+.topic {
+    text-align: center;
+}
+
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-label {}
+
+.input {
+    display: block;
+    width: 20em;
+    height: 2em;
+
+    border-radius: 8px;
+}
+
+.submit-button {
+    margin: 1em;
+    width: 20em;
+    height: 2em;
+}
