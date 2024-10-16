@@ -5,21 +5,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>login page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <section class="login-container">
         <h1 class="topic">Login</h1>
-        <form action="" class="input-container">
+        <form action="" class="input-container" id="login-form">
             <label for="username" class="input-label">Username</label>
             <input type="text" class="input" id="username">
+            <span class="input-error-label" id="username-error"></span>
+
             <label for="password" class="input-label">Password</label>
             <input type="password" class="input" id="password">
-            <button class="submit-button" id="username-and-password-submit">submit</button>
-        </form>
-    </section>
+            <span class="input-error-label" , id="password-error"></span>
+            <div class="role-container">
 
+                <label for="role-selector" class="input-label">Role: </label>
+                <select class="role-selector" name="role">
+                    <option value="student">นักศึกษา</option>
+                    <option value="teacher">อาจารย์</option>
+                </select>
+            </div>
+
+            <button type="button" class="submit-button" id="username-and-password-submit">submit</button>
+        </form>
+        <div id="id-container" class="container">
+            <h2>ข้อมูลนักศึกษา</h2>
+            <div id="id-info">
+            </div>
+        </div>
+    </section>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
