@@ -24,16 +24,23 @@
             <label for="password" class="input-label">Password</label>
             <input type="password" class="input" id="password">
             <span class="input-error-label" , id="password-error"></span>
+            <div class="password-visibility">
+                <input type="checkbox" id="show-password">
+                <label for="show-password" class="input-label">show password</label>
+            </div>
+
+
             <div class="role-container">
 
                 <label for="role-selector" class="input-label">Role: </label>
                 <select class="role-selector" name="role">
+                    <option value="empty">select your role</option>
                     <option value="student">นักศึกษา</option>
                     <option value="teacher">อาจารย์</option>
                 </select>
             </div>
 
-            <button type="button" class="submit-button" id="username-and-password-submit">submit</button>
+            <button type="button" class="submit-button" id="username-and-password-submit">login</button>
         </form>
         <div id="id-container" class="container">
             <h2>ข้อมูลนักศึกษา</h2>

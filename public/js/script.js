@@ -102,6 +102,8 @@ async function call_REST_API_Hello() {
                                 console.log(text);
                                 displayID.innerHTML = "";
 
+                                document.querySelector("h2").textContent = "ข้อมูลบุคลากร";
+
                                 displayID.appendChild(createP(`ชื่อ: ${text.First_Name_Th} ${text.Last_Name_Th}`));
                                 displayID.appendChild(createP(`แผนก: ${text.department}`));
                                 displayID.appendChild(createP(`สังกัด: ${text.faculty}`));
@@ -157,26 +159,45 @@ function displayPasswordError(s) {
 
 checkEmptyUsername = function () {
     errorUsername.style.display = 'none';
-    submitButton.disabled = false;
 
     if (!inputUsername.value) {
         displayUsernameError("Your username can't be empty");
-        submitButton.disabled = true;
     }
 }
 checkEmptyPassword = function () {
     errorPassword.style.display = 'none';
-    submitButton.disabled = false;
 
     if (!inputPassword.value) {
         displayPasswordError("Your password can't be empty");
+    }
+}
+
+checkEmptyRole = function () {
+
+    if (inputRole.value === 'empty') {
+    }
+}
+
+checkAll = function () {
+    submitButton.disabled = false;
+    if (!inputUsername.value || !inputPassword.value || inputRole.value === 'empty') {
         submitButton.disabled = true;
     }
 }
 
-checkList = [checkEmptyUsername, checkEmptyPassword];
 submitButton.disabled = true;
-for (let i = 0; i < checkList.length; i++) { loginForm.addEventListener("change", checkList[i]); }
+loginForm.addEventListener("input", checkAll);
+inputUsername.addEventListener("change", checkEmptyUsername);
+inputPassword.addEventListener("change", checkEmptyPassword);
+inputRole.addEventListener("input", checkEmptyRole);
+
+document.querySelector("#show-password").addEventListener("change", function () {
+    if (document.querySelector("#show-password").checked) {
+        inputPassword.type = "text";
+    } else {
+        inputPassword.type = "password";
+    }
+});
 submitButton.addEventListener("click", call_REST_API_Hello);
 
 
